@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title> Submit form</title>
+              <link rel="stylesheet" href="css/style.css">
+
+        <style type="text/css" media="screen">
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-family: helvetica;
+            } 
+           
+            
+      .main{
+    text-transform: uppercase;
+    font-size: 14px;
+    display: block;
+    width: 80%;
+    max-width: 500px;
+    background: white;
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding: 20px 30px;
+    border:5px solid black;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px #000000b3;
+    font-family: "Montserrat",sans-serif;
+		   }   
+        </style>
+    </head>
+    <body>
+        
+
+        <div class="main">
+            <h2>Thank you for reaching us</h2>
+            <h5>Your submitted details:</h5><hr><br/><br/>
+        <script>
+            function getParams(){
+                var idx = document.URL.indexOf('?');
+                var params = new Array();
+                if (idx != -1) {
+                    var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+                    for (var i=0; i<pairs.length; i++){
+                        nameVal = pairs[i].split('=');
+                        params[nameVal[0]] = nameVal[1];
+                    }
+                }
+                return params;
+            }
+            params = getParams();
+            uname = unescape(params["uname"]);
+            mail= unescape(params["mail"]);
+            pno= unescape(params["pno"]);
+            sub= unescape(params["sub"]);
+            msg= unescape(params["msg"]);
+            
+           document.writeln("Name :" +""+ uname + "<br>");
+            document.writeln("Email : " +""+ mail + "<br>");
+            document.writeln("Phno : " +""+ pno + "<br>");
+            document.writeln("Subject : " + ""+sub + "<br>");
+            document.writeln("Message : " +''+ msg +''+ "<br>");   
+        </script>
+        </div>
+    </body>
+</html>
